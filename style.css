@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #011f31;
+}
+.sidebar header {
+  font-size: 30px;
+  color: white;
+  user-select: none;
+  text-align: center;
+  line-height: 70px;
+  background-color: #002c44;
+}
+
+.sidebar ul li a {
+  font-size: 20px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  user-select: auto;
+  padding-left: 55px;
+  box-sizing: border-box;
+  line-height: 70px;
+  border-top: 1px black;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+.sidebar ul li a i {
+  margin-right: 20px;
+}
+ul li:hover a {
+  padding-left: 60px;
+}
+
+#check {
+  display: none;
+}
+label #btn1,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  background: #042331;
+  border-radius: 3px;
+}
+label #btn1 {
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all 0.4s;
+}
+label #cancel {
+  z-index: 1111;
+  left: -200px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all 0.4s ease;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
+
+#check:checked ~ label #btn1 {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 200px;
+}
+
+#check:checked ~ section {
+  margin-left: 250px;
+}
+section {
+  background-image: url("download1.jfif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all 0.4s;
+  object-fit: cover;
+}
